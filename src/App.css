@@ -1,0 +1,161 @@
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.app-container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat();
+  grid-template-rows: repeat();
+  grid-template-areas:
+    "n1 n1 n1 n1 n1"
+    "n2 n3 n3 n3 n3"
+    "n2 n3 n3 n3 n3"
+    "n4 n4 n4 n4 n4";
+}
+
+/* App.css */
+header,
+footer {
+  width: auto;
+  height: 5rem;
+}
+.app-header {
+  background-color: #f9ebb2;
+  grid-area: n1;
+  display: grid;
+  place-content: center;
+}
+
+.app-sidebar {
+  background-color: #c3e6e0;
+  grid-area: n2;
+  height: 100vh;
+  padding: 1rem;
+  width: auto;
+}
+.mb-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.botones {
+  display: flex;
+  flex-direction: column;
+}
+.buscador {
+  margin: 0.5rem;
+  margin-top: 3rem;
+}
+.religioso {
+  margin: 0.5rem;
+}
+.civil {
+  margin: 0.5rem;
+}
+.reset {
+  margin: 0.5rem;
+}
+
+.app-main {
+  background-color: #f0d0c0;
+  grid-area: n3;
+  display: flex;
+  padding: 2rem;
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 0;
+}
+.search-table-container {
+  max-height: 80vh;
+  padding: 2rem;
+}
+.app-footer {
+  background-color: #d6c3e6;
+  grid-area: n4;
+  display: grid;
+  place-content: center;
+  margin-bottom: 0;
+}
+
+/* Media Query para dispositivos móviles */
+@media (max-width: 768px) {
+  .app-container {
+    grid-template-areas:
+      "n1 "
+      "n2 "
+      "n3 "
+      "n4 ";
+  }
+  .app-main {
+    background-color: #f0d0c0;
+    grid-area: n3;
+    display: flex;
+    padding: 2rem;
+    height: 80vh;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 0;
+  }
+
+  .botones {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .buscador {
+    width: 17rem;
+    height: 2rem;
+  }
+  header,
+  footer {
+    padding: 15px;
+  }
+  .app-sidebar {
+    background-color: #c3e6e0;
+    grid-area: n2;
+    height: 100%;
+    padding: 1rem;
+    width: auto;
+  }
+
+  .search-table-container {
+    overflow-y: auto;
+    padding: 2rem;
+  }
+
+  table {
+    width: 100%;
+    table-layout: fixed;
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+  th,
+  td {
+    max-width: none;
+    white-space: normal;
+    word-wrap: break-word;
+    padding: 5px;
+  }
+  .app-footer {
+    background-color: #d6c3e6;
+    grid-area: n4;
+    display: grid;
+    place-content: center;
+    margin-bottom: 0;
+    width: 100%;
+    height: auto;
+  }
+  .scrollable-table-container {
+    max-height: calc(100vh);
+    overflow-y: auto;
+    padding: 1rem;
+  }
+  .search-table-container {
+    /* Elimina el max-height para permitir el desbordamiento de contenido */
+    overflow-y: auto;
+    padding: 2rem;
+  }
+}
