@@ -11,8 +11,6 @@ function App() {
   // "feriados" almacena todos los feriados y "filteredFeriados" almacena los feriados filtrados.
   const [feriados, setFeriados] = useState([]);
   const [filteredFeriados, setFilteredFeriados] = useState([]);
-  // eslint-disable-next-line no-unused-vars
-  const [filterType, setFilterType] = useState(""); // Almacena el tipo de filtro
 
   // La función "obtenerDatos" asíncrona realiza una solicitud a la API y actualiza las variables de estado.
   const obtenerDatos = async () => {
@@ -28,7 +26,7 @@ function App() {
     obtenerDatos();
   }, []);
 
-  // La función "handleSearch" filtra los feriados en función del término de búsqueda.
+  // La función "handleSearch" filtra los feriados en función del término de búsqueda.(desde el input)
   const handleSearch = (searchTerm) => {
     const filtered = feriados.filter(
       (feriado) =>
@@ -45,7 +43,6 @@ function App() {
       const filtered = feriados.filter(
         (feriado) => feriado.type === filterType
       );
-      setFilterType(filterType);
       setFilteredFeriados(filtered);
     }
   };
@@ -53,7 +50,6 @@ function App() {
   // La función "handleReset" restablece los feriados y el filtro.
   const handleReset = () => {
     setFilteredFeriados(feriados);
-    setFilterType("");
   };
 
   // Renderizamos la estructura de la pagina, utilizando componentes de Bootstrap.
@@ -92,5 +88,4 @@ function App() {
   );
 }
 
-// Exportamos el componente "App" para que pueda ser utilizado en otras partes de la aplicación.
 export default App;

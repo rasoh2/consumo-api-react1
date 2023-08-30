@@ -1,12 +1,12 @@
 import { Table } from "react-bootstrap";
-// Creamos "MiApi". Es como un componente  que muestra una lista de días festivos los cuales llegan por props
+// Creamos "MiApi". Es un componente  que muestra una lista de días festivos los cuales llegan por props
 const MiApi = ({ filteredByTipoFeriados }) => {
   return (
     <div>
-      {/* Aquí empieza la parte donde decimos cómo debe verse la tabla. */}
+      {/* Aquí se monta la tabla de bootstrap. */}
       <Table responsive striped bordered hover style={{ tableLayout: "fixed" }}>
         <thead className="table-container">
-          {/* Esta es la parte de arriba de la tabla, donde ponemos los encabezados. */}
+          {/* este es el encabezado de la tabla. */}
           <tr>
             <th>Fecha</th>
             <th>Titulo</th>
@@ -14,11 +14,12 @@ const MiApi = ({ filteredByTipoFeriados }) => {
             <th>Extra</th>
           </tr>
         </thead>
-        {/* Aquí es donde r ponemos la información de los días festivos. */}
+        {/* Aquí de monta la información de los días festivos. */}
         <tbody>
           {/* Usamos  maps para extraer la información y repetir esta parte por cada día festivo en la lista. */}
           {filteredByTipoFeriados.map((feriado, index) => (
             // Aquí ponemos los detalles de cada día festivo en una fila.
+            // key es una propiedad de React que identifica de manera única cada elemento en la lista
             <tr key={index}>
               <td>{feriado.date}</td>
               <td>{feriado.title}</td>

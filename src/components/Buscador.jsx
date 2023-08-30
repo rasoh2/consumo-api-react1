@@ -22,7 +22,7 @@ const SearchBar = ({ onSearch, onFilter, onReset }) => {
     onReset();
   };
 
-  // El componente "SearchBar" renderiza dos elementos principales: una barra de búsqueda y botones de filtro.
+  // El componente "SearchBar" renderiza los elementos principales buscador y tres botones
   return (
     <div className="mb-3">
       <div>
@@ -55,5 +55,4 @@ const SearchBar = ({ onSearch, onFilter, onReset }) => {
   );
 };
 
-// Exportamos el componente "SearchBar" para que pueda ser utilizado en otras partes de la aplicación.
 export default SearchBar;
